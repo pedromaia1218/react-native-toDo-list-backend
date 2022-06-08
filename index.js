@@ -1,4 +1,5 @@
-const app = require('express')()
+const express = require('express')
+const app = express()
 const db = require('./config/db')
 const consign = require('consign')
 
@@ -11,10 +12,6 @@ consign()
 
 app.db = db
 
-app.get('/', (req, res) => {
-    res.status(200).send('Meu backend!')
-})
-
 app.listen(3000, () => {
-    console.log('Backend running....')
+    console.log('Backend executando...')
 })
