@@ -8,7 +8,7 @@ module.exports = app => {
         app.db('tasks')
             .where({ userId: req.user.id })
             .where('estimateAt', '<=', date)
-            .orderby('estimateAt')
+            .orderBy('estimateAt')
             .then(tasks => res.json(tasks))
             .catch(err => res.status(400).json(err))
     }
@@ -55,7 +55,7 @@ module.exports = app => {
             .first()
             .then(task => {
                 if (!task) {
-                    const msg = `Task com id ${req.params.id} não econtrada.`
+                    const msg = `Task com id ${req.params.id} não encontrada.`
                     return res.status(400).send(msg)
                 }
 
